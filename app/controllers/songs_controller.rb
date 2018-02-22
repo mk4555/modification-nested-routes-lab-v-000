@@ -43,6 +43,8 @@ class SongsController < ApplicationController
   end
 
   def edit
+    if params[:artist_id]
+      artist = Artist.find_by_id(params[:id])
     @song = Song.find(params[:id])
   end
 
